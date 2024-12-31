@@ -7,8 +7,8 @@ import java.io.Serializable;
 @Embeddable
 public class ChatRoomMembersPK implements Serializable {
 
-    private int chatRoomId;
-    private int memberId;
+    private int chat_room_id;
+    private int member_id;
 
     // 기본 생성자, equals(), hashCode() 메소드 구현
 }
