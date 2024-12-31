@@ -17,6 +17,9 @@ import java.sql.Timestamp;
 @ToString
 public class ChatRoomMembers {
 
+    @EmbeddedId
+    private ChatRoomMembersPK id;  // 복합 기본 키 사용
+
     @ManyToOne
     @JoinColumn(name = "chat_room_id")
     private ChatRooms chatRooms;

@@ -13,7 +13,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -34,7 +36,17 @@ public class ChatService {
     private void init(){
         chatRooms = new LinkedHashMap<>(); // 채팅 방 정보를 담을 맵
     }
-
+    public List<ChatRoomResDto> findAllRoom() {
+        List<ChatRoomResDto> roomList = new ArrayList<>(chatRooms.values());
+        if(roomList != null) {
+            return roomList;
+        }else {
+            return null;
+        }
+    }
+    public ChatRoomResDto findRoomById(String roomId){
+        return chatRooms.get(roomId);
+    }
 
 
 
