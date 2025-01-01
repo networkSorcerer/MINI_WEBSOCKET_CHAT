@@ -24,6 +24,7 @@ public class ChatRoomMembers {
     @JoinColumn(name = "chat_room_id",insertable = false, updatable = false)
     private ChatRooms chatRooms;
 
+    // 방장
     @ManyToOne
     @JoinColumn(name = "member_id",insertable = false, updatable = false)
     private Members members;
