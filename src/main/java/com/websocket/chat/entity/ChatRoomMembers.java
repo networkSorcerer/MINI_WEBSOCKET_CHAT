@@ -1,7 +1,7 @@
 package com.websocket.chat.entity;
 
 import com.websocket.chat.constant.RoomRole;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,11 +21,11 @@ public class ChatRoomMembers {
     private ChatRoomMembersPK id;  // 복합 기본 키 사용
 
     @ManyToOne
-    @JoinColumn(name = "chat_room_id")
+    @JoinColumn(name = "chat_room_id",insertable = false, updatable = false)
     private ChatRooms chatRooms;
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id",insertable = false, updatable = false)
     private Members members;
 
     private int user_id;

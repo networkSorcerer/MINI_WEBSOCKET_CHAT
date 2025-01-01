@@ -1,12 +1,12 @@
 package com.websocket.chat.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -17,4 +17,16 @@ import lombok.ToString;
 public class Messages {
     @Id
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "chat_room_id")
+    private ChatRooms chatRooms;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Members members;
+    
+    private String content;
+
+    private boolean is_read;
 }

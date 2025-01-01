@@ -1,6 +1,6 @@
 package com.websocket.chat.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,6 +29,7 @@ public class ChatRooms {
 
     private Timestamp created_at;
 
-    @OneToMany(mappedBy = "chat_rooms", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "chatRooms", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
     private List<ChatRoomMembers> chatRoomMembersList = new ArrayList<>();
 }

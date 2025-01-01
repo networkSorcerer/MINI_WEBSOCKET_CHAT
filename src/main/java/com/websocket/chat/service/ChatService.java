@@ -8,7 +8,7 @@ import com.websocket.chat.entity.Members;
 import com.websocket.chat.repository.ChatRoomMembersRepository;
 import com.websocket.chat.repository.ChatRoomsRepository;
 import com.websocket.chat.repository.MembersRepository;
-import jakarta.annotation.PostConstruct;
+import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

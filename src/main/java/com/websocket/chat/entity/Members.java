@@ -2,7 +2,7 @@ package com.websocket.chat.entity;
 
 import com.websocket.chat.constant.Role;
 import com.websocket.chat.constant.SubscriptionLevel;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -43,6 +43,6 @@ public class Members {
 
     private Timestamp updated_at;
 
-    @OneToMany(mappedBy = "Members", cascade = CascadeType.ALL, orphanRemoval = true )
+    @OneToMany(mappedBy = "members", cascade = CascadeType.ALL, orphanRemoval = true )
     private List<ChatRoomMembers> chatRoomMembersList = new ArrayList<>();
 }
